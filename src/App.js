@@ -2,7 +2,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">Welcome to React App
+    <div className="App">
+      Welcome to React App
     </div>
   );
 }

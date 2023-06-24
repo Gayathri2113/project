@@ -1,7 +1,6 @@
-.App {
-  text-align: center;
+.App{
+    max-width: 600px;
 }
-
-
-
-
+.weather{
+    border: 1px solid black;
+}

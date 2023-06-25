@@ -16,6 +16,6 @@ export default function CurrentDate(){
         minutes = `0${minutes}`
     }
     return (
-        <h6 className="day mb-0">{days[day]} {hours}:{minutes}</h6>
+        <h6 className="day mb-3">{days[day]} {hours}:{minutes}</h6>
     )
 }

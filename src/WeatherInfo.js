@@ -1,15 +1,17 @@
 import React from "react";
+import './App.css';
 import Currentdate from "./Currentdate";
+import WeatherIcon from "./WeatherIcon"
 
 export default function WeatherInfo(props){
     return(
-        <div>
+        <div className="info">
             <h1 className="city text-capitalize mb-0">{props.info.city}</h1>
             <Currentdate />
-            <h6 className="text-capitalize mb-0">{props.info.description}</h6>
+            <h6 className="text-capitalize">{props.info.description}</h6>
             <div className="row">
                 <div className="col-6 d-flex">
-                    <img src={props.info.icon} alt={props.info.description} className="img-fluid me-0" />
+                    <WeatherIcon icon={props.info.icon} report={props.info.description} />
                     <h2 className="temperature">{props.info.temperature}<span className="units">°C</span></h2>
                 </div>
                 <div className="col-6">

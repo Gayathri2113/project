@@ -5,38 +5,42 @@
 .weather{
     border: 1px solid black;
 }
-.form-control{
+.weather .form-control{
     margin:10px;
     box-shadow: 5px 5px 5px whitesmoke;
 }
-.btn{
+.weather .btn{
     margin:10px;
     box-shadow: 2px 2px 2px rgb(96, 96, 164);
 }
-h1{
+.weather canvas{
+    width:50px;
+    height:50px;
+    margin-top: 30px;
+}
+.info h1{
     margin-left: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     opacity: 0.4;
 }
-h6{
+.info h6{
     margin: 0 10px ;
     line-height: 1px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     opacity: 0.6;
 }
-.temperature{
+.info .temperature{
     margin: 1px;
     font-size: 80px;
 }
-.units{
+.info .units{
     font-size: 20px;
     position: relative;
     top: -42px;
 }
-ul{
+.info ul{
     list-style-type: none;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     opacity: 0.6;
     padding: 15px;
-
 }

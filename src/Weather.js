@@ -1,41 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
-
+import axios from "axios";
+import WeatherInfo from "./WeatherInfo"
 
 export default function Weather() {
-    let city = "Paris"
-    let apikey ="215576bab28022db35e6e64f040e1b56";
-    let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    let [city,setcity] = useState("delhi")
+    let [load, loaded] = useState(false)
+    let [data,setdata] = useState({})
 
 
-    return (
-        <div className="weather">
-            <form>
-                <div className="row">
-                    <div className="col-9">
-                        <input type="search" placeholder="Enter a city" className="form-control pe-5"></input>
+    function showTemperature(response) {
+        setdata({
+            temperature: Math.round(response.data.main.temp),
+            precipitation: response.data.main.temp,
+            humidity: response.data.main.humidity,
+            wind: Math.round(response.data.wind.speed),
+            city: response.data.name,
+            description: response.data.weather[0].description,
+            icon:`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        })
+        loaded(true)
+    }
+
+    function searchCity(){
+        let apikey = "215576bab28022db35e6e64f040e1b56";
+        let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+        axios.get(apiurl).then(showTemperature);
+    }
+
+    function handle(event){
+        event.preventDefault();
+        searchCity();
+    }
+
+    function updateCity(event){
+        setcity(event.target.value)
+    }
+
+    if (load) {
+        return (
+            <div className="weather">
+                <form onSubmit={handle}>
+                    <div className="row">
+                        <div className="col-9">
+                            <input type="search" placeholder="Enter a city" className="form-control pe-5" onChange={updateCity}></input>
+                        </div>
+                        <div className="col-3">
+                            <button className="btn btn-primary">Search</button>
+                        </div>
                     </div>
-                    <div className="col-3">
-                        <button className="btn btn-primary">Search</button>
-                    </div>
-                </div>
-            </form>
-            <h1 className="city mb-0">Paris</h1>
-            <h6 className="day mb-0">Saturday 21:30</h6>
-            <h6 className="report mb-0">Cloudy</h6>
-            <div className="row">
-                <div className="col-6 d-flex">
-                    <img src="https://openweathermap.org/img/wn/10d@2x.png" className="img-fluid me-0"/>
-                    <h2 className="temperature">6<span className="units">°C</span></h2>
-                </div>
-                <div className="col-6">
-                    <ul>
-                        <li>Precipitation: 45%</li>
-                        <li>Humidity: 45%</li>
-                        <li>Wind: 1Km/hr</li>
-                    </ul>
-                </div>
+                </form>
+                <WeatherInfo info={data}/>
             </div>
-        </div>
-    )
+        )
+    }
+    else{
+        searchCity();
+        return "It is loading..!"
+    }
 }

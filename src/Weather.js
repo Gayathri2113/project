@@ -4,7 +4,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo"
 
 export default function Weather() {
-    let [city,setcity] = useState("delhi")
+    let [city,setcity] = useState("karimnagar")
     let [load, loaded] = useState(false)
     let [data,setdata] = useState({})
 

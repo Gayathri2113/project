@@ -42,10 +42,10 @@ export default function Weather() {
             <div className="weather">
                 <form onSubmit={handle}>
                     <div className="row">
-                        <div className="col-9">
+                        <div className="col-8">
                             <input type="search" placeholder="Enter a city" className="form-control pe-5" onChange={updateCity}></input>
                         </div>
-                        <div className="col-3">
+                        <div className="col-4">
                             <button className="btn btn-primary">Search</button>
                         </div>
                     </div>

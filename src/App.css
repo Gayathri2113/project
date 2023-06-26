@@ -17,7 +17,7 @@
 .weather canvas{
     width:40px;
     height:40px;
-    margin-top: 35px;
+    margin-top: 28px;
     margin-left: 20px;
 }
 .info h1{
@@ -33,12 +33,12 @@
 }
 .temp .temperature{
     margin: 1px;
-    font-size: 80px;
+    font-size: 60px;
 }
 .temp .units{
     font-size: 20px;
     position: relative;
-    top: -42px;
+    top: -30px;
 }
 .temp a{
     text-decoration: none;
@@ -51,4 +51,24 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     opacity: 0.6;
     padding: 15px;
+}
+@media (max-width:400px) {
+    .temp .temperature {
+        font-size: 40px;
+    }
+    .temp .units {
+        font-size: 20px;
+        position: relative;
+        top: -15px;
+    }
+    .weather canvas {
+        width: 30px;
+        height: 30px;
+        margin-top: 18px;
+        margin-left: 20px;
+    }
+    .info .d-flex{
+        padding-top:10px;
+    }
+
 }

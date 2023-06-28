@@ -17,7 +17,7 @@
 .weather canvas{
     width:40px;
     height:40px;
-    margin-top: 28px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 .info h1{
@@ -52,6 +52,16 @@
     opacity: 0.6;
     padding: 15px;
 }
+.forecastDay{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+.temperature{
+    margin-left: 10px;
+}
+.min-temperature {
+    opacity: 0.5;
+}
 @media (max-width:400px) {
     .temp .temperature {
         font-size: 40px;
@@ -70,5 +80,7 @@
     .info .d-flex{
         padding-top:10px;
     }
-
 }
+/* .forecast .min-temperature{
+    opacity : 0.5;
+} */

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
 import axios from "axios";
-import WeatherInfo from "./WeatherInfo"
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast"
 
 export default function Weather() {
     let [city,setcity] = useState("karimnagar")
@@ -17,7 +18,9 @@ export default function Weather() {
             wind: Math.round(response.data.wind.speed),
             city: response.data.name,
             description: response.data.weather[0].description,
-            icon:response.data.weather[0].icon
+            icon:response.data.weather[0].icon,
+            lat:response.data.coord.lat,
+            lon:response.data.coord.lon
         })
         loaded(true)
     }
@@ -51,6 +54,7 @@ export default function Weather() {
                     </div>
                 </form>
                 <WeatherInfo info={data}/>
+                <WeatherForecast lat={data.lat} lon={data.lon}/>
             </div>
         )
     }

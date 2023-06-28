@@ -1,10 +1,11 @@
 import React from "react";
 import './App.css';
 import Currentdate from "./Currentdate";
-import WeatherIcon from "./WeatherIcon"
-import Temperature from "./Temperature"
+import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 
 export default function WeatherInfo(props){
+
     return(
         <div className="info">
             <h1 className="city text-capitalize mb-2">{props.info.city}</h1>
@@ -12,7 +13,7 @@ export default function WeatherInfo(props){
             <h6 className="text-capitalize">{props.info.description}</h6>
             <div className="row mt-2">
                 <div className="col-6 d-flex">
-                    <WeatherIcon icon={props.info.icon} report={props.info.description} />
+                    <WeatherIcon icon={props.info.icon} size={50} report={props.info.description} />
                     <Temperature celTemp={props.info.temperature}/>
                 </div>
                 <div className="col-6">

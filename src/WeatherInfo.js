@@ -13,7 +13,7 @@ export default function WeatherInfo(props){
             <h6 className="text-capitalize">{props.info.description}</h6>
             <div className="row mt-2">
                 <div className="col-8 d-flex">
-                    <WeatherIcon icon={props.info.icon} size={50} report={props.info.description} />
+                    <WeatherIcon icon={props.info.icon} size={60} report={props.info.description} />
                     <Temperature celTemp={props.info.temperature}/>
                 </div>
                 <div className="col-4">
